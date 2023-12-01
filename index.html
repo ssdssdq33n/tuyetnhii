@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuyet Nhi</title>
+    <style>
+   *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+   }
+   body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* background-color: rgb(204, 227, 216); */
+    background-color: pink;
+   }
+   .box{
+    position: relative;
+    width: 150px;
+    height: 200px;
+    transform-style: preserve-3d;
+    animation: animate 17s linear infinite;
+   }
+   @keyframes animate {
+    0%{
+        transform: perspective(1000px) rotateY(0deg);
+    }
+    100%{
+        transform: perspective(1000px) rotateY(360deg);
+    }
+   }
+   .box span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i)*45deg)) translateZ(400px);
+    --webkit-box-reflect: below 0px linear-gradient(transparent,#0004)
+   }
+
+   .box span img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+   }
+   .chu{
+    font-size: 30px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top:100px;
+    cursor: pointer;
+   }
+   .chu img{
+    width: 100px;
+    height: 100px;
+   }
+   .img_hpbd{
+    border: 1px solid #ddd;
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.3);
+   }
+
+   .main{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 9999;
+    background-color: rgb(149, 230, 191);
+   }
+   .sodem{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 60px;
+    color: palevioletred;
+    font-style: normal;
+   }
+   .nhan{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: none;
+    color: brown;
+    font-size: 50px;
+    background-color: rgb(149, 230, 191);
+    cursor: pointer;
+   }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="chu"><img src="./imgs/img_9.png" ></div>
+        <span class="img_hpbd" style="--i:1;"><img src="./imgs/img_1.jpg" alt=""></span>
+        <span class="img_hpbd" style="--i:2;"><img src="./imgs/img_2.jpg" alt=""></span>
+        <span class="img_hpbd" style="--i:3;"><img src="./imgs/img_3.jpg" alt=""></span>
+        <span class="img_hpbd" style="--i:4;"><img src="./imgs/img_4.jpg" alt=""></span>
+        <span class="img_hpbd" style="--i:6;"><img src="./imgs/img_6.jpg" alt=""></span>
+        <span class="img_hpbd" style="--i:7;"><img src="./imgs/img_7.jpg" alt=""></span>
+        <span class="img_hpbd" style="--i:8;"><img src="./imgs/img_8.jpg" alt=""></span>
+        <span class="img_hpbd" style="--i:8;"><img src="./imgs/img_10.jpg" alt=""></span>
+        <audio src="./mp3/nolovenolife-prod-by-kewtiie-official-lyric-video.mp3" class="audio" type="audio/mp3" playsinline="true" ></audio>
+    </div>
+    <script>
+        const nhan=document.querySelector('.chu')
+        nhan.onclick=function(){
+            const nhac=document.querySelector(".audio")
+            nhac.play()
+        }
+    </script>
+</body>
+</html>
